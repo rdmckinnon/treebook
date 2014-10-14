@@ -1,0 +1,98 @@
+
+
+Started GET "/" for 127.0.0.1 at 2014-10-14 12:41:19 -0400
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /Library/Ruby/Gems/2.0.0/gems/railties-4.1.6/lib/rails/templates/rails/welcome/index.html.erb (1.7ms)
+Completed 200 OK in 81ms (Views: 46.8ms | ActiveRecord: 0.0ms)
+  [1m[36m (1.8ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (1.8ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateStatuses (20141014164531)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  CREATE TABLE "statuses" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "content" text, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20141014164531"]]
+  [1m[35m (2.5ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+
+Started GET "/" for 127.0.0.1 at 2014-10-14 12:46:58 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /Library/Ruby/Gems/2.0.0/gems/railties-4.1.6/lib/rails/templates/rails/welcome/index.html.erb (1.6ms)
+Completed 200 OK in 90ms (Views: 46.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/statuses" for 127.0.0.1 at 2014-10-14 12:47:24 -0400
+Processing by StatusesController#index as HTML
+  [1m[35mStatus Load (28.3ms)[0m  SELECT "statuses".* FROM "statuses"
+  Rendered statuses/index.html.erb within layouts/application (29.8ms)
+Completed 200 OK in 3027ms (Views: 2994.4ms | ActiveRecord: 28.3ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-10-14 12:47:27 -0400
+
+
+Started GET "/assets/statuses.css?body=1" for 127.0.0.1 at 2014-10-14 12:47:27 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-14 12:47:27 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-14 12:47:27 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-14 12:47:27 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-14 12:47:28 -0400
+
+
+Started GET "/assets/statuses.js?body=1" for 127.0.0.1 at 2014-10-14 12:47:28 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-14 12:47:28 -0400
+
+
+Started GET "/statuses/new" for 127.0.0.1 at 2014-10-14 12:47:30 -0400
+Processing by StatusesController#new as HTML
+  Rendered statuses/_form.html.erb (332.6ms)
+  Rendered statuses/new.html.erb within layouts/application (380.3ms)
+Completed 200 OK in 829ms (Views: 827.4ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/statuses" for 127.0.0.1 at 2014-10-14 12:47:39 -0400
+Processing by StatusesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jW7Cj5hhIFjDjswDmDov9Pfhzimq9Rod/rL2jciHheg=", "status"=>{"name"=>"Ryan", "content"=>"I'm on treebook"}, "commit"=>"Create Status"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (19.9ms)[0m  INSERT INTO "statuses" ("content", "created_at", "name", "updated_at") VALUES (?, ?, ?, ?)  [["content", "I'm on treebook"], ["created_at", "2014-10-14 16:47:39.691838"], ["name", "Ryan"], ["updated_at", "2014-10-14 16:47:39.691838"]]
+  [1m[36m (99.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://0.0.0.0:3000/statuses/1
+Completed 302 Found in 161ms (ActiveRecord: 119.1ms)
+
+
+Started GET "/statuses/1" for 127.0.0.1 at 2014-10-14 12:47:39 -0400
+Processing by StatusesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mStatus Load (0.2ms)[0m  SELECT  "statuses".* FROM "statuses"  WHERE "statuses"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered statuses/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 108ms (Views: 106.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-14 12:47:40 -0400
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-10-14 12:47:40 -0400
+
+
+Started GET "/assets/statuses.css?body=1" for 127.0.0.1 at 2014-10-14 12:47:40 -0400
+
+
+Started GET "/assets/statuses.js?body=1" for 127.0.0.1 at 2014-10-14 12:47:40 -0400
+
+
+Started GET "/statuses" for 127.0.0.1 at 2014-10-14 12:47:57 -0400
+Processing by StatusesController#index as HTML
+  [1m[36mStatus Load (0.2ms)[0m  [1mSELECT "statuses".* FROM "statuses"[0m
+  Rendered statuses/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 60ms (Views: 58.7ms | ActiveRecord: 0.2ms)
